@@ -16,9 +16,6 @@ RUN apt-get update && apt-get install -y \
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Install PHP extensions
-#RUN pecl install mongodb && docker-php-ext-enable mongodb
-
 # Copy bin/console
 COPY ./bin/console ./bin/
 
@@ -41,7 +38,7 @@ COPY ./composer.* ./symfony.lock ./
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Composer install
-RUN composer install --ignore-platform-reqs
+RUN composer install
 
 # Hack: link 'sh' to 'bash'
 RUN ln -sf /bin/bash /bin/sh
