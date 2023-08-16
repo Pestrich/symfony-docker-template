@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7eef70675a53e1f8e3ca510bfca881c0",
+    "content-hash": "4c41e01977179823f5753b6085dcbf72",
     "packages": [
         {
             "name": "psr/cache",
@@ -3116,6 +3116,62 @@
             "time": "2023-07-17T12:08:28+00:00"
         },
         {
+            "name": "rector/rector",
+            "version": "0.17.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rectorphp/rector.git",
+                "reference": "e2003ba7c5bda06d7bb419cf4be8dae5f8672132"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/e2003ba7c5bda06d7bb419cf4be8dae5f8672132",
+                "reference": "e2003ba7c5bda06d7bb419cf4be8dae5f8672132",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2|^8.0",
+                "phpstan/phpstan": "^1.10.26"
+            },
+            "conflict": {
+                "rector/rector-doctrine": "*",
+                "rector/rector-downgrade-php": "*",
+                "rector/rector-phpunit": "*",
+                "rector/rector-symfony": "*"
+            },
+            "bin": [
+                "bin/rector"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Instant Upgrade and Automated Refactoring of any PHP code",
+            "keywords": [
+                "automation",
+                "dev",
+                "migration",
+                "refactoring"
+            ],
+            "support": {
+                "issues": "https://github.com/rectorphp/rector/issues",
+                "source": "https://github.com/rectorphp/rector/tree/0.17.13"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/tomasvotruba",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-08-14T16:33:29+00:00"
+        },
+        {
             "name": "sebastian/cli-parser",
             "version": "2.0.0",
             "source": {
@@ -4088,5 +4144,5 @@
         "ext-iconv": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }
