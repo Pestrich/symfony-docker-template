@@ -19,7 +19,10 @@ services:
     build:
       context: .
       dockerfile: ./.docker/php-fpm/Dockerfile
+    environment:
+      PHP_IDE_CONFIG: "serverName=symfonyDockerTemplate"
     volumes:
+      - ./.docker/php-fpm/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini:ro
       - ./bin:/var/www/bin:ro
       - ./config:/var/www/config:ro
       - ./public:/var/www/public:ro

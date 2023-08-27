@@ -16,6 +16,12 @@ RUN apt-get update && apt-get install -y \
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Install xdebug
+RUN pecl install xdebug && docker-php-ext-enable xdebug
+
+# Copy xdebug configuration
+COPY ./.docker/php-fpm/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+
 # Copy bin/console
 COPY ./bin/console ./bin/
 
