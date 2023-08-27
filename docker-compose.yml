@@ -33,6 +33,7 @@ services:
       - ./symfony.lock:/var/www/symfony.lock:ro
       - ./phpstan.neon.dist:/var/www/phpstan.neon.dist:ro
       - ./phpunit.xml.dist:/var/www/phpunit.xml.dist:ro
+      - ./rector.php:/var/www/rector.php:ro
     networks:
       - internal
 
