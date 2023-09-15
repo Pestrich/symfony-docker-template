@@ -31,9 +31,9 @@ services:
       - ./var:/var/www/var
       - ./.env:/var/www/.env:ro
       - ./.env:/var/www/.env.test:ro
-      - ./composer.json:/var/www/composer.json:ro
-      - ./composer.lock:/var/www/composer.lock:ro
-      - ./symfony.lock:/var/www/symfony.lock:ro
+      - ./composer.json:/var/www/composer.json
+      - ./composer.lock:/var/www/composer.lock
+      - ./symfony.lock:/var/www/symfony.lock
       - ./phpstan.neon.dist:/var/www/phpstan.neon.dist:ro
       - ./phpunit.xml.dist:/var/www/phpunit.xml.dist:ro
       - ./rector.php:/var/www/rector.php:ro

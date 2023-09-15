@@ -22,21 +22,6 @@ RUN pecl install xdebug && docker-php-ext-enable xdebug
 # Copy xdebug configuration
 COPY ./.docker/php-fpm/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
-# Copy bin/console
-COPY ./bin/console ./bin/
-
-# Copy config
-COPY ./config/* ./config/
-
-# Copy public/index.php
-COPY ./public/index.php ./public/
-
-# Copy src/Kernel.php
-COPY ./src/Kernel.php ./src/
-
-# Copy .env
-COPY ./.env ./
-
 # Copy composer.lock, composer.json and symfony.lock
 COPY ./composer.* ./symfony.lock ./
 
@@ -44,7 +29,7 @@ COPY ./composer.* ./symfony.lock ./
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Composer install
-RUN composer install
+RUN composer install --no-scripts
 
 # Hack: link 'sh' to 'bash'
 RUN ln -sf /bin/bash /bin/sh

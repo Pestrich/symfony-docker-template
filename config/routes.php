@@ -5,5 +5,5 @@ declare(strict_types=1);
 use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 
 return static function (RoutingConfigurator $routes): void {
-    $routes->import('../src/Controller/', 'attribute', true);
+    $routes->import('../src/Controller/', 'attribute');
 };
